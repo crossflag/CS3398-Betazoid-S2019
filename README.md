@@ -1,21 +1,14 @@
 
-# Project Title
-
-This project blah blah blah
+# DarkWeb 
 
 ## Vision Statement
 
-* Team members
-* What we are doing
-* Who we are doing it for
-* Why we are doing this
+Our team is developing DarkWeb as a plugin for anyone who want more control over how the coloring and brightness of content is displayed in their browser.
 
-## Paragraph 
 
-* Welcome Statement
-* The description
-* Why is it special
-* What is missing
+## Outline
 
+
+Welcome to our project and thanks for dropping in. We are excited you’re here. DarkWeb is a plugin that allows you to seamlessly view content on you browser while controlling the amount of blue/white light that is displayed. Our team’s goal is to create plugin for anyone who may not want their sleep disrupted or to reduce eye strain.
 
 
