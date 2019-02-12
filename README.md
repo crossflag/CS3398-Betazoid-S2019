@@ -3,7 +3,7 @@
 
 ## Vision Statement
 
-Our team is developing DarkWeb as a plugin for anyone who want more control over how the coloring and brightness of content is displayed in their browser.
+Our team is developing DarkWeb as a plugin for anyone who wants more control over how the coloring and brightness of content is displayed in their browser.
 
 
 ## Outline
