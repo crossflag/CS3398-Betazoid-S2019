@@ -1,0 +1,18 @@
+{
+
+  "manifest_version": 2,
+  "name": "DarkWeb",
+  "version": "1.0",
+
+  "description": "Serves as the skeleton for the DarkWeb Project",
+
+  "icons": {
+    "48": "day-and-night.svg"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*"]
+    }
+  ]
+ }
