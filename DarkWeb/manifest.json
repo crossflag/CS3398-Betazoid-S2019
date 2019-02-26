@@ -12,7 +12,8 @@
 
   "content_scripts": [
     {
-      "matches": ["*://*.mozilla.org/*"]
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["darkweb.js"]
     }
   ]
- }
+}
