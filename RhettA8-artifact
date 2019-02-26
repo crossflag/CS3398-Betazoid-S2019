@@ -1,0 +1,6 @@
+Finished researching basic javascript including the use of color manipulation. 
+Seems to be pretty simple to just change the color values of background layers 
+and text, though algorithms might be more challenging then I think they will be.
+
+changing colors is as simple as one line,
+Ex: "document.body.style.backgroundColor = "#000000";" will change a background black
