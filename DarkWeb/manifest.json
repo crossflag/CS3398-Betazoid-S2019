@@ -1,9 +1,15 @@
 {
-
-  "description": "Serves as the skeleton for the DarkWeb Project",
+    
   "manifest_version": 2,
-  "name": "button-demo",
+  "name": "DarkWeb",
   "version": "1.0",
+  "description": "Serves as the skeleton for the DarkWeb Project",
+  "homepage_url": "https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019",
+  "background": {
+    "scripts": [
+        "background.js"
+    ]
+  },
 
    "icons": {
     "48": "day-and-night.svg"
