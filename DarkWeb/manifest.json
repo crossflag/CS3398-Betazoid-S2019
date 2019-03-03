@@ -1,29 +1,36 @@
 {
 
+  "description": "Serves as the skeleton for the DarkWeb Project",
   "manifest_version": 2,
-  "name": "DarkWeb",
+  "name": "button-demo",
   "version": "1.0",
 
-  "description": "Serves as the skeleton for the DarkWeb Project",
-
-  "icons": {
+   "icons": {
     "48": "day-and-night.svg"
-  },
-  
-  "background": {
-  	"scripts": ["background.js"]
-  },
-
+	},
+ 
   "browser_action": {
-  	"default_icon": {
-		"48": "day-and-night.svg"
-	}
-  },
-
-  "content_scripts": [
-    {
-      "matches": ["*://*.mozilla.org/*"],
-      "js": ["darkweb.js"]
+    "browser_style": true,
+    "default_popup": "popup/settings.html",
+    "default_icon": {
+      "48": "day-and-night.svg",
+      "32": "day-and-night.svg"
     }
-  ]
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
