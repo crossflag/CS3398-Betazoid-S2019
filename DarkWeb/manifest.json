@@ -1,42 +1,23 @@
 {
-    
+
+  "description": "Serves as the skeleton for the DarkWeb Project.",
   "manifest_version": 2,
-  "name": "DarkWeb",
+  "name": "apply-css",
   "version": "1.0",
-  "description": "Serves as the skeleton for the DarkWeb Project",
   "homepage_url": "https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019",
+
   "background": {
-    "scripts": [
-        "background.js"
-    ]
+    "scripts": ["background.js"]
   },
 
-   "icons": {
-    "48": "day-and-night.svg"
-	},
- 
   "browser_action": {
-    "browser_style": true,
-    "default_popup": "popup/settings.html",
-    "default_icon": {
-      "48": "day-and-night.svg",
-      "32": "day-and-night.svg"
-    }
-  }
+    "default_icon": "icons/off.svg",
+    "browser_style": true
+  },
+  
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ]
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
