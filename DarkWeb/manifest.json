@@ -11,8 +11,10 @@
   },
 
   "browser_action": {
+
     "default_icon": "icons/off.svg",
-    "browser_style": true
+    "browser_style": true,
+    "default_popup":"popup/settings.html"
   },
   
   "permissions": [
