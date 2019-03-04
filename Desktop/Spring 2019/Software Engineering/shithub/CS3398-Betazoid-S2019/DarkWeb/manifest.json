@@ -1,18 +1,20 @@
 {
 
-  "description": "Adds a page action to toggle applying CSS to pages.",
+  "description": "Serves as the skeleton for the DarkWeb Project.",
   "manifest_version": 2,
   "name": "apply-css",
   "version": "1.0",
-  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/apply-css",
+  "homepage_url": "https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019",
 
   "background": {
     "scripts": ["background.js"]
   },
 
   "browser_action": {
+
     "default_icon": "icons/off.svg",
-    "browser_style": true
+    "browser_style": true,
+    "default_popup":"popup/settings.html"
   },
   
   "permissions": [
