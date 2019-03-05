@@ -34,6 +34,7 @@ function protocolIsApplicable(url) {
   return APPLICABLE_PROTOCOLS.includes(anchor.protocol);
 }
 
+
 /*
 Initialize the page action: set icon and title, then show.
 Only operates on tabs whose URL's protocol is applicable.
@@ -64,6 +65,18 @@ browser.tabs.onUpdated.addListener((id, changeInfo, tab) => {
 });
 
 /*
-Toggle CSS when the page action is clicked.
+toggleCSS when popup sends a message.
 */
-browser.browserAction.onClicked.addListener(toggleCSS);
+function update(received, sender, sendResponse) {
+  var gettingAllTabs = browser.tabs.query({});
+  gettingAllTabs.then((tabs) => {
+  for (tab in tabs) {
+    initializebrowserAction(tab);
+    toggleCSS(tab);
+  }
+});
+  sendResponse({response: "recieved"})
+}
+
+
+browser.runtime.onMessage.addListener(update);

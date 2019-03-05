@@ -1,69 +1,24 @@
-const CSS = "body {filter: invert(100%); backbround-color: white; color: black;}";
-const TITLE_APPLY = "Apply CSS";
-const TITLE_REMOVE = "Remove CSS";
-const APPLICABLE_PROTOCOLS = ["http:", "https:"];
 
 /*
-Toggle CSS: based on the current title, insert or remove the CSS.
-Update the page action's title and icon to reflect its state.
+send message to background.js when a "click" event happens
 */
-function toggleCSS(tab) {
 
-  function gotTitle(title) {
-    if (title === TITLE_APPLY) {
-      browser.browserAction.setIcon({tabId: tab.id, path: "icons/on.svg"});
-      browser.browserAction.setTitle({tabId: tab.id, title: TITLE_REMOVE});
-      browser.tabs.insertCSS({code: CSS});
-    } else {
-      browser.browserAction.setIcon({tabId: tab.id, path: "icons/off.svg"});
-      browser.browserAction.setTitle({tabId: tab.id, title: TITLE_APPLY});
-      browser.tabs.removeCSS({code: CSS});
-    }
-  }
 
-  var gettingTitle = browser.browserAction.getTitle({tabId: tab.id});
-  gettingTitle.then(gotTitle);
+//print response to ensure message was handled correctly
+function handleResponse(message) {
+  console.log(`Message from the background script:  ${message.response}`);
 }
 
-/*
-Returns true only if the URL's protocol is in APPLICABLE_PROTOCOLS.
-*/
-function protocolIsApplicable(url) {
-  var anchor =  document.createElement('a');
-  anchor.href = url;
-  return APPLICABLE_PROTOCOLS.includes(anchor.protocol);
+
+//print errors if any
+function handleError(error) {
+  console.log(`Error: ${error}`);
 }
 
-/*
-Initialize the page action: set icon and title, then show.
-Only operates on tabs whose URL's protocol is applicable.
-*/
-function initializebrowserAction(tab) {
-  if (protocolIsApplicable(tab.url)) {
-    browser.browserAction.setIcon({tabId: tab.id, path: "icons/off.svg"});
-    browser.browserAction.setTitle({tabId: tab.id, title: TITLE_APPLY});
-    browser.browserAction.show(tab.id);
-  }
+function notifyExtension(e) {
+
+  var sending = browser.runtime.sendMessage({message:"color"});
+  sending.then(handleResponse, handleError);
 }
 
-/*
-When first loaded, initialize the page action for all tabs.
-*/
-var gettingAllTabs = browser.tabs.query({});
-gettingAllTabs.then((tabs) => {
-  for (let tab of tabs) {
-    initializebrowserAction(tab);
-  }
-});
-
-/*
-Each time a tab is updated, reset the page action for that tab.
-*/
-browser.tabs.onUpdated.addListener((id, changeInfo, tab) => {
-  initializebrowserAction(tab);
-});
-
-/*
-Toggle CSS when the page action is clicked.
-*/
-browser.browserAction.onClicked.addListener(toggleCSS);
+window.addEventListener("click", notifyExtension);
