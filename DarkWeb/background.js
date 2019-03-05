@@ -79,4 +79,7 @@ function update(received, sender, sendResponse) {
 }
 
 
+/*
+call update when a message is sent 
+*/
 browser.runtime.onMessage.addListener(update);
