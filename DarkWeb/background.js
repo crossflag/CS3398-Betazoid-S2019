@@ -68,7 +68,7 @@ function toggleCSS(tab, buttonID) {
   function applyFilter() {
     // Check if user clicked the same button twice, or if user wants to clear all filters
     if(previousID == buttonID || buttonID == "Clear Filter") {
-      browser.browserAction.setIcon({tabId: tab.id, path: "icons/off.svg"});
+      browser.browserAction.setIcon({tabId: tab.id, path: "icons/sun.svg"});
       browser.tabs.removeCSS({code: CSS}); // Remove the filter
       CSS = ""; // Reset the CSS variable
       previousID = ""; // Reset previously used button id
@@ -90,7 +90,7 @@ function toggleCSS(tab, buttonID) {
           break;
       }
       previousID = buttonID;
-      browser.browserAction.setIcon({tabId: tab.id, path: "icons/on.svg"});
+      browser.browserAction.setIcon({tabId: tab.id, path: "icons/moon.svg"});
       browser.tabs.insertCSS({code: CSS}); // Apply the selected filter
     }
   }
@@ -116,7 +116,7 @@ Only operates on tabs whose URL's protocol is applicable.
 */
 function initializebrowserAction(tab) {
   if (protocolIsApplicable(tab.url)) {
-    browser.browserAction.setIcon({tabId: tab.id, path: "icons/off.svg"});
+    browser.browserAction.setIcon({tabId: tab.id, path: "icons/sun.svg"});
     browser.browserAction.setTitle({tabId: tab.id, title: TITLE_APPLY});
     //browser.browserAction.show(tab.id); // This was throwing an error in the debugger for some reason
   }
