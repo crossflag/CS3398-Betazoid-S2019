@@ -1,23 +1,64 @@
-const CSS = "body {filter: invert(100%); backbround-color: white; color: black;}";
+//const CSS = "body {filter: invert(100%); backbround-color: white; color: black;}";
 const TITLE_APPLY = "Apply CSS";
 const TITLE_REMOVE = "Remove CSS";
 const APPLICABLE_PROTOCOLS = ["http:", "https:"];
+
+// Different settings for different buttons
+CSS = ""; // Will hold code for various filters
+const INVERT = "body {filter: invert(100%); backbround-color: white; color: black;}"
+const GRAYSCALE = "body {filter: grayscale(100%); backbround-color: white; color: black;}";
+const SEPIA = "body {filter: sepia(100%); backbround-color: white; color: black;}"
 
 /*
 Toggle CSS: based on the current title, insert or remove the CSS.
 Update the page action's title and icon to reflect its state.
 */
-function toggleCSS(tab) {
+function toggleCSS(tab, buttonID) {
 
   function gotTitle(title) {
     if (title === TITLE_APPLY) {
       browser.browserAction.setIcon({tabId: tab.id, path: "icons/on.svg"});
       browser.browserAction.setTitle({tabId: tab.id, title: TITLE_REMOVE});
-      browser.tabs.insertCSS({code: CSS});
-    } else {
+      // Check the button's id and apply a filter based on it
+      switch(buttonID)
+      {
+        case "Invert Color":
+          CSS = INVERT;
+          break;
+        case "Grayscale":
+          CSS = GRAYSCALE;
+          break;
+        case "Sepia":
+          CSS = SEPIA;
+          break;
+      }
+      browser.tabs.insertCSS({code: CSS}); // Apply the selected filter
+    } else if(title === TITLE_REMOVE){
       browser.browserAction.setIcon({tabId: tab.id, path: "icons/off.svg"});
       browser.browserAction.setTitle({tabId: tab.id, title: TITLE_APPLY});
-      browser.tabs.removeCSS({code: CSS});
+      browser.tabs.removeCSS({code: CSS}); // Remove any filter
+    }
+    else { // First time pressing a button
+      /*
+       *** Reusing code! Is there a better way to implement this section? ***
+       What this fixes: Bug where user would have to press a button twice to apply a filter.
+       Why the bug would occur: the page action's title was not initialized to TITLE_REMOVE.
+       */
+      browser.browserAction.setIcon({tabId: tab.id, path: "icons/on.svg"});
+      browser.browserAction.setTitle({tabId: tab.id, title: TITLE_REMOVE});
+      switch(buttonID)
+      {
+        case "Invert Color":
+          CSS = INVERT;
+          break;
+        case "Grayscale":
+          CSS = GRAYSCALE;
+          break;
+        case "Sepia":
+          CSS = SEPIA;
+          break;
+      }
+      browser.tabs.insertCSS({code: CSS}); // Apply the selected filter
     }
   }
 
@@ -72,7 +113,7 @@ function update(received, sender, sendResponse) {
   gettingAllTabs.then((tabs) => {
   for (tab in tabs) {
     initializebrowserAction(tab);
-    toggleCSS(tab);
+    toggleCSS(tab, received.message);
   }
 });
   sendResponse({response: "recieved"})
@@ -80,6 +121,8 @@ function update(received, sender, sendResponse) {
 
 
 /*
-call update when a message is sent 
+Add an event listener
+The popup window's event listener broadcasts a message, and this receives it
+Upon receiving a message, it then runs update()
 */
 browser.runtime.onMessage.addListener(update);
