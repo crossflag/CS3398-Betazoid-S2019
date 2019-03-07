@@ -6,10 +6,10 @@ const APPLICABLE_PROTOCOLS = ["http:", "https:"];
 // Different settings for different buttons
 var CSS = ""; // Will hold code for various filters
 var previousID = ""; // Will hold previous button id for filters
-const INVERT = "body {filter: invert(100%); backbround-color: white; color: black;}";
+const INVERT = "body {filter: invert(100%); backbround-color: white; color: black;} html {background-color: black;}";
 const GRAYSCALE = "body {filter: grayscale(100%); backbround-color: white; color: black;}";
 const SEPIA = "body {filter: sepia(100%); backbround-color: white; color: black;}";
-
+const NIGHT = "div {background: black !important; color: white !important ; }body {backbround-color: #162129; color: #162129;}html {background-color: #162129;}A, A:hover, A:visited, A:active {background-color:#162129 !important;color: #768fb8 !important;}";
 /*
 Toggle CSS: based on the current title, insert or remove the CSS.
 Update the page action's title and icon to reflect its state.
@@ -87,6 +87,9 @@ function toggleCSS(tab, buttonID) {
         case "Sepia":
           CSS = SEPIA;
           break;
+		case "Night":
+		  CSS = NIGHT;
+		  break;
         default: // Do nothing for default
           break;
       }
