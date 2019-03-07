@@ -9,7 +9,7 @@ var previousID = ""; // Will hold previous button id for filters
 const INVERT = "body {filter: invert(100%); backbround-color: white; color: black;} html {background-color: black;}";
 const GRAYSCALE = "body {filter: grayscale(100%); backbround-color: white; color: black;}";
 const SEPIA = "body {filter: sepia(100%); backbround-color: white; color: black;}";
-const NIGHT = "div {background: black !important; color: white !important ; }body {backbround-color: #162129; color: #162129;}html {background-color: #162129;}A, A:hover, A:visited, A:active {background-color:#162129 !important;color: #768fb8 !important;}";
+const NIGHT = "html {background-color:#17151c; border:#A49898;}*{border:#17151c; } div {background:#17151c !important; color: white !important; }body {backbround-color: #17151c; color: #17151c;}A, A:hover, A:visited, A:active {background-color:#17151c !important;color: #768fb8 !important;}";
 /*
 Toggle CSS: based on the current title, insert or remove the CSS.
 Update the page action's title and icon to reflect its state.
@@ -175,5 +175,4 @@ Add an event listener
 The popup window's event listener broadcasts a message, and this receives it
 Upon receiving a message, it then runs update()
 */
-
 browser.runtime.onMessage.addListener(update);
