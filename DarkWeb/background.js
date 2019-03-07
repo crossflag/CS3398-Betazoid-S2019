@@ -4,18 +4,20 @@ const TITLE_REMOVE = "Remove CSS";
 const APPLICABLE_PROTOCOLS = ["http:", "https:"];
 
 // Different settings for different buttons
-CSS = ""; // Will hold code for various filters
-const INVERT = "body {filter: invert(100%); backbround-color: white; color: black;}"
+var CSS = ""; // Will hold code for various filters
+var previousID = ""; // Will hold previous button id for filters
+const INVERT = "body {filter: invert(100%); backbround-color: white; color: black;}";
 const GRAYSCALE = "body {filter: grayscale(100%); backbround-color: white; color: black;}";
-const SEPIA = "body {filter: sepia(100%); backbround-color: white; color: black;}"
+const SEPIA = "body {filter: sepia(100%); backbround-color: white; color: black;}";
 
 /*
 Toggle CSS: based on the current title, insert or remove the CSS.
 Update the page action's title and icon to reflect its state.
 */
 function toggleCSS(tab, buttonID) {
-
+  /*
   function gotTitle(title) {
+
     if (title === TITLE_APPLY) {
       browser.browserAction.setIcon({tabId: tab.id, path: "icons/on.svg"});
       browser.browserAction.setTitle({tabId: tab.id, title: TITLE_REMOVE});
@@ -39,11 +41,11 @@ function toggleCSS(tab, buttonID) {
       browser.tabs.removeCSS({code: CSS}); // Remove any filter
     }
     else { // First time pressing a button
-      /*
-       *** Reusing code! Is there a better way to implement this section? ***
-       What this fixes: Bug where user would have to press a button twice to apply a filter.
-       Why the bug would occur: the page action's title was not initialized to TITLE_REMOVE.
-       */
+      
+       //*** Reusing code! Is there a better way to implement this section? ***
+       //What this fixes: Bug where user would have to press a button twice to apply a filter.
+       //Why the bug would occur: the page action's title was not initialized to TITLE_REMOVE.
+       
       browser.browserAction.setIcon({tabId: tab.id, path: "icons/on.svg"});
       browser.browserAction.setTitle({tabId: tab.id, title: TITLE_REMOVE});
       switch(buttonID)
@@ -61,9 +63,41 @@ function toggleCSS(tab, buttonID) {
       browser.tabs.insertCSS({code: CSS}); // Apply the selected filter
     }
   }
+  */
+
+  function applyFilter() {
+    // Check if user clicked the same button twice, or if user wants to clear all filters
+    if(previousID == buttonID || buttonID == "Clear Filter") {
+      browser.browserAction.setIcon({tabId: tab.id, path: "icons/sun.svg"});
+      browser.tabs.removeCSS({code: CSS}); // Remove the filter
+      CSS = ""; // Reset the CSS variable
+      previousID = ""; // Reset previously used button id
+    }
+    else { 
+      browser.tabs.removeCSS({code: CSS}); // Remove the filter
+      // Get the code for the selected filter
+      switch(buttonID) {
+        case "Invert Color":
+          CSS = INVERT;
+          break;
+        case "Grayscale":
+          CSS = GRAYSCALE;
+          break;
+        case "Sepia":
+          CSS = SEPIA;
+          break;
+        default: // Do nothing for default
+          break;
+      }
+      previousID = buttonID;
+      browser.browserAction.setIcon({tabId: tab.id, path: "icons/moon.svg"});
+      browser.tabs.insertCSS({code: CSS}); // Apply the selected filter
+    }
+  }
 
   var gettingTitle = browser.browserAction.getTitle({tabId: tab.id});
-  gettingTitle.then(gotTitle);
+  //gettingTitle.then(gotTitle);
+  gettingTitle.then(applyFilter);
 }
 
 /*
@@ -82,9 +116,9 @@ Only operates on tabs whose URL's protocol is applicable.
 */
 function initializebrowserAction(tab) {
   if (protocolIsApplicable(tab.url)) {
-    browser.browserAction.setIcon({tabId: tab.id, path: "icons/off.svg"});
+    browser.browserAction.setIcon({tabId: tab.id, path: "icons/sun.svg"});
     browser.browserAction.setTitle({tabId: tab.id, title: TITLE_APPLY});
-    browser.browserAction.show(tab.id);
+    //browser.browserAction.show(tab.id); // This was throwing an error in the debugger for some reason
   }
 }
 
