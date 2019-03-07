@@ -20,6 +20,7 @@ Send a message to (all?) other event listeners
 For this web extension, background.js contains the only other event listener
 */
 function notifyExtension(e) {
+  console.log("Settings.js listener: button was pressed.");
   var buttonID = e.target.id; // Get the pressed button's id
   var sending = browser.runtime.sendMessage({message:buttonID});
   // The popup's event listener expects a response, so we handle it here
