@@ -68,7 +68,7 @@ function toggleCSS(tab, buttonID) {
   function applyFilter() {
     // Check if user clicked the same button twice, or if user wants to clear all filters
     console.log("Before function, previousID: " + previousID + " buttonID: " + buttonID);
-    if(previousID == buttonID || buttonID == "Clear Filter") {
+    if((previousID == buttonID && buttonID != "") || buttonID == "Clear Filter") {
       //browser.browserAction.setIcon({tabId: tab.id, path: "icons/off.svg"});
       browser.tabs.removeCSS({code: CSS}); // Remove the filter
       CSS = ""; // Reset the CSS variable
@@ -90,7 +90,8 @@ function toggleCSS(tab, buttonID) {
         default: // Do nothing for default
           break;
       }
-      previousID = buttonID;
+      if(buttonID != "")
+        previousID = buttonID;
       //browser.browserAction.setIcon({tabId: tab.id, path: "icons/on.svg"});
       browser.tabs.insertCSS({code: CSS}); // Apply the selected filter
     }
