@@ -69,7 +69,7 @@ function toggleCSS(tab, buttonID) {
     // Check if user clicked the same button twice, or if user wants to clear all filters
     console.log("Before function, previousID: " + previousID + " buttonID: " + buttonID);
     if((previousID == buttonID && buttonID != "") || buttonID == "Clear Filter") {
-      //browser.browserAction.setIcon({tabId: tab.id, path: "icons/off.svg"});
+      browser.browserAction.setIcon({tabId: tab.id, path: "icons/sun.svg"});
       browser.tabs.removeCSS({code: CSS}); // Remove the filter
       CSS = ""; // Reset the CSS variable
       previousID = ""; // Reset previously used button id
@@ -91,9 +91,11 @@ function toggleCSS(tab, buttonID) {
           break;
       }
       if(buttonID != "")
+      {
         previousID = buttonID;
-      //browser.browserAction.setIcon({tabId: tab.id, path: "icons/on.svg"});
-      browser.tabs.insertCSS({code: CSS}); // Apply the selected filter
+        browser.browserAction.setIcon({tabId: tab.id, path: "icons/moon.svg"});
+      }
+        browser.tabs.insertCSS({code: CSS}); // Apply the selected filter
     }
     console.log("At end of function, prevID: " + previousID + " buttonID: " + buttonID);
   }
@@ -159,7 +161,7 @@ function update(received, sender, sendResponse) {
   }
 });
 */
-  var tab = browser.tab;
+  var tab = browser.tabs.getCurrent();
   toggleCSS(tab, received.message);
   sendResponse({response: "Button was pressed."});
 }
