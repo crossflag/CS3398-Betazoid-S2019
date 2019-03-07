@@ -172,4 +172,5 @@ Add an event listener
 The popup window's event listener broadcasts a message, and this receives it
 Upon receiving a message, it then runs update()
 */
+
 browser.runtime.onMessage.addListener(update);
