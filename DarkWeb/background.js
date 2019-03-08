@@ -6,10 +6,19 @@ const APPLICABLE_PROTOCOLS = ["http:", "https:"];
 // Different settings for different buttons
 var CSS = ""; // Will hold code for various filters
 var previousID = ""; // Will hold previous button id for filters
-const INVERT = "body {filter: invert(100%); backbround-color: white; color: black;} html {background-color: black;}";
-const GRAYSCALE = "body {filter: grayscale(100%); backbround-color: white; color: black;}";
-const SEPIA = "body {filter: sepia(100%); backbround-color: white; color: black;}";
-const NIGHT = "html {background-color:#17151c; border:#A49898;}*{border:#17151c; } div {background:#17151c !important; color: white !important; }body {backbround-color: #17151c; color: #17151c;}A, A:hover, A:visited, A:active {background-color:#17151c !important;color: #768fb8 !important;}";
+const INVERT = "body {filter: invert(100%); background-color: white; color: black;} html {background-color: black;} header {background-color: white;} ";
+const GRAYSCALE = "body {filter: grayscale(100%); background-color: white; color: black;}";
+const SEPIA = "body {filter: sepia(100%); background-color: white; color: black;}";
+const NIGHT =
+"body{filter: invert(100%); background-color: #E8EAE3; color: #181928;} "+
+"html,header {background-color: #17151c;} "+
+"a:link{color:#873E5A;}"+
+"a, a:hover, a:visited, a:active {background-color:#E8EAE3;color: #897800;}"+
+"div, :not(img, video){background-color:#E8EAE3; color:#181928;} "+
+"img, .svg {filter:invert(100%);} "+
+".app-badges, .mw-body{background: #E8EAE3;}"+
+"*{color: 181928;}";
+
 /*
 Toggle CSS: based on the current title, insert or remove the CSS.
 Update the page action's title and icon to reflect its state.
