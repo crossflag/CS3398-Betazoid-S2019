@@ -20,7 +20,8 @@ Next steps: Implementing better color filtering so pages look more uniform when 
          
 Tyler:
 
-Nicolas:
+Nicolas:  Nicholas: Connected the buttons inside the extension popup to to the background javascript file using a message sender and message listener. Then used function created by Tyler to successfully inject CSS into page. Next Steps: Save the setting from the last time browser was closed.
+
 
 Rhett:
 
