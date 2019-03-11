@@ -18,6 +18,9 @@ const NIGHT =
 "img, .svg {filter:invert(100%);} "+
 ".app-badges, .mw-body{background: #E8EAE3;}"+
 "*{color: 181928;}";
+const ROTATECW = "body {filter: hue-rotate(180deg); background-color: white; color: black;}";
+const ROTATECCW = "body {filter: hue-rotate(270deg); background-color: white; color: black;}";
+const NOBLUE = "body {filter: sepia(40%); background-color: white; color: black;}";
 
 /*
 Toggle CSS: based on the current title, insert or remove the CSS.
@@ -99,6 +102,15 @@ function toggleCSS(tab, buttonID) {
 		case "Night":
 		  CSS = NIGHT;
 		  break;
+		case "RotateCW":
+    	  CSS = ROTATECW;
+		  break;
+		case "RotateCCW":
+		  CSS = ROTATECCW;
+		  break;
+		case "Blue Light":
+		  CSS = NOBLUE;
+		  break; 
         default: // Do nothing for default
           break;
       }
