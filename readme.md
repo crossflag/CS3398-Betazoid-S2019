@@ -15,8 +15,8 @@ Welcome to our project and thanks for dropping in. We are excited you’re here.
 Project runs and implements basic funtionality.
 
 ## Team's feature/accomplishments and next steps
-Cameron: Responsible for extension UI look and layout. Artifacts include settings.html and setting.css. 
-         Next steps: Implementing better color filtering so pages look more uniform when filter is applied.
+Cameron: Responsible for extension UI look and layout. Artifacts include settings.html and setting.css. Both of these files can be found in DarkWeb/popup.
+Next steps: Implementing better color filtering so pages look more uniform when filter is applied.
          
 Tyler:
 
