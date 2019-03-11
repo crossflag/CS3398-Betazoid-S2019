@@ -16,10 +16,14 @@ Project runs and implements basic funtionality.
 
 ## Team's feature/accomplishments and next steps
 Cameron: Responsible for extension UI look and layout. Artifacts include settings.html and setting.css. 
-         Next steps: Implementing better color filtering so pages look more uniform when filter is applied.\n
+         Next steps: Implementing better color filtering so pages look more uniform when filter is applied.
+         
 Tyler:
+
 Nicolas:
+
 Rhett:
+
 Richard:
 
 
