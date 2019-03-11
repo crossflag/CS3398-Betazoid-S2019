@@ -18,10 +18,9 @@ Project runs and implements basic funtionality.
 Cameron: Responsible for extension UI look and layout. Artifacts include settings.html and setting.css. Both of these files can be found in DarkWeb/popup.
 Next steps: Implementing better color filtering so pages look more uniform when filter is applied.
          
-Tyler:
+Tyler: Responsible for implementing the basic structure for the project (DarkWeb/manifest.json, DarkWeb/popup/, DarkWeb/icons/), aided in the construction of the background.js file, and created the 'Night' theme. Next steps: Reimplement 'Night' mode feature utilizing JQuery for more nuanced adjustments of web page element colors.
 
-Nicolas:  Nicholas: Connected the buttons inside the extension popup to to the background javascript file using a message sender and message listener. Then used function created by Tyler to successfully inject CSS into page. Next Steps: Save the setting from the last time browser was closed.
-
+Nicolas:
 
 Rhett:
 
