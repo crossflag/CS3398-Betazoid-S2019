@@ -1,4 +1,4 @@
-
+﻿
 # DarkWeb 
 
 ## Vision Statement
@@ -24,6 +24,6 @@ Nicolas:
 
 Rhett: Responsible for adding the RotateCW, RotateCCW, and Blue Light filters. I provided small adjustments to the GUI(Artifacts available in background.js, popup/settings.css, and popup/settings.html in the Darkweb folder of this repository). Background.js is used at all times, settings.css is used when the popup is on, and settings.html is used whenever a buttonID is called for. Also responsible researching how to implement ability to apply to multiple tabs at once, making a filter persist in a tab that is updated, which has proved to be very challenging for our team right now. Status: Continuing work on the incomplete issues mentioned in the last sentence.
 
-Richard:
+Richard: Responsible for adding basic button functionality in background.js. This file handles all button presses, and inserts CSS code to the web page depending on that button. Next steps: Add ability to apply color filters across all tabs at once.
 
 
