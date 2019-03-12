@@ -16,7 +16,7 @@ Project runs and implements basic funtionality.
 
 ## Team's feature/accomplishments and next steps
 ### Cameron
-Responsible for extension UI look and layout. Artifacts include settings.html and setting.css. Both of these files can be found in DarkWeb/popup.
+Responsible for extension UI look and layout. Artifacts include [settings.html](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/settings.html) and [setting.css](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/settings.css). Both of these files can be found in DarkWeb/popup.
 Next steps: Implementing better color filtering so pages look more uniform when filter is applied.
          
 ### Tyler
