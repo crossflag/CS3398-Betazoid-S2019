@@ -1,4 +1,4 @@
-
+﻿
 # DarkWeb 
 
 ## Vision Statement
@@ -24,6 +24,6 @@ Nicolas:
 
 Rhett:
 
-Richard:
+Richard: Responsible for adding button functionality in background.js. Next steps: Add ability to apply color filters across all tabs at once.
 
 
