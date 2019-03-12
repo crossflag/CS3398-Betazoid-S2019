@@ -20,7 +20,7 @@ Next steps: Implementing better color filtering so pages look more uniform when 
          
 Tyler: Responsible for implementing the basic structure for the project (DarkWeb/manifest.json, DarkWeb/popup/, DarkWeb/icons/), aided in the construction of the background.js file, and created the 'Night' theme. Next steps: Reimplement 'Night' mode feature utilizing JQuery for more nuanced adjustments of web page element colors.
 
-Nicolas:
+Nicholas: Connected the buttons inside the extension popup to to the background javascript file using a message sender and message listener. Then used function created by Tyler to successfully inject CSS into page. Next Steps: Save the setting from the last time browser was closed
 
 Rhett: Responsible for adding the RotateCW, RotateCCW, and Blue Light filters. I provided small adjustments to the GUI(Artifacts available in background.js, popup/settings.css, and popup/settings.html in the Darkweb folder of this repository). Background.js is used at all times, settings.css is used when the popup is on, and settings.html is used whenever a buttonID is called for. Also responsible researching how to implement ability to apply to multiple tabs at once, making a filter persist in a tab that is updated, which has proved to be very challenging for our team right now. Status: Continuing work on the incomplete issues mentioned in the last sentence.
 
