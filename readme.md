@@ -1,4 +1,4 @@
-﻿
+
 # DarkWeb 
 
 ## Vision Statement
@@ -22,8 +22,8 @@ Tyler: Responsible for implementing the basic structure for the project (DarkWeb
 
 Nicolas:
 
-Rhett:
+Rhett: Responsible for adding the RotateCW, RotateCCW, and Blue Light filters. I provided small adjustments to the GUI(Artifacts available in background.js, popup/settings.css, and popup/settings.html). Also responsible researching how to implement ability to apply to multiple tabs at once, making a filter persist in a tab that is updated, which has proved to be very challenging for our team right now. Next Steps: Continue work on the incomplete issues mentioned in the last sentence.
 
-Richard: Responsible for adding button functionality in background.js. Next steps: Add ability to apply color filters across all tabs at once.
+Richard:
 
 
