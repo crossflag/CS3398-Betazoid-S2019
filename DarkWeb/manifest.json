@@ -15,7 +15,15 @@
     "browser_style": true,
     "default_popup":"popup/settings.html"
   },
-
+  "commands": {
+    "toggle-feature": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+D",
+        "linux": "Ctrl+Shift+D"
+      },
+      "description": "Send a 'toggle-feature' event"
+    }
+  },
   "permissions": [
     "activeTab",
     "tabs"
