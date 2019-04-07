@@ -28,74 +28,73 @@ const ROTATECCW = "body {filter: hue-rotate(270deg); background-color: white; co
 const NOBLUE = "body {filter: sepia(40%); background-color: white; color: black;}";
 
 /*
-Toggle CSS: based on the current title, insert or remove the CSS.
-Update the page action's title and icon to reflect its state.
-*/
-function toggleCSS(tab, buttonID) {
-
-  function applyFilter() {
-    // Check if user clicked the same button twice, or if user wants to clear all filters
-    console.log("Before function, previousID: " + previousID + " buttonID: " + buttonID);
-    if((previousID == buttonID && buttonID != "") || buttonID == "Clear Filter") {
-      browser.browserAction.setIcon({tabId: tab.id, path: "icons/sun.svg"});
-      browser.tabs.removeCSS({code: CSS}); // Remove the filter
-      CSS = ""; // Reset the CSS variable
-      previousID = ""; // Reset previously used button id
-    }
-    else { 
-      browser.tabs.removeCSS({code: CSS}); // Remove the filter
-      // Get the code for the selected filter
-      switch(buttonID) {
-        case "Invert":
-          CSS = INVERT;
-          break;
-        case "Grayscale":
-          CSS = GRAYSCALE;
-          break;
-        case "Sepia":
-          CSS = SEPIA;
-          break;
-	case "Night":
-	  CSS = NIGHT;
-	  break;
-	case "RotateCW":
-    	  CSS = ROTATECW;
-	  break;
-	case "RotateCCW":
-	  CSS = ROTATECCW;
-	  break;
-	case "BlueLight":
-	  CSS = NOBLUE;
-	  break; 
-        default: // Do nothing for default
-          break;
-      }
-      if(buttonID != "")
-      {
-        previousID = buttonID;
-        browser.browserAction.setIcon({tabId: tab.id, path: "icons/moon.svg"});
-      }
-        browser.tabs.insertCSS({code: CSS}); // Apply the selected filter
-    }
-    console.log("At end of function, prevID: " + previousID + " buttonID: " + buttonID);
-  }
-  applyFilter();
-}
-
-/*
-toggleCSS when popup sends a message.
-*/
-function update(received, sender, sendResponse) {
-  var tab = browser.tabs.getCurrent();
-  toggleCSS(tab, received.message);
-  console.log("MESSAGE THAT WAS RECEIVED: " + received.message);
-  sendResponse({response: "Button was pressed."});
-}
-
-
-/*
 Add an event listener
 The popup window's event listener broadcasts a message, and this receives it
 Upon receiving a message, it then runs update()
 */
-browser.runtime.onMessage.addListener(update);
+browser.runtime.onMessage.addListener(updateFilter);
+
+function updateFilter(recieved, sender, sendResponse) {
+  setCSScode(recieved.message);
+  checkToggle(recieved.message);
+  sendResponse({response: "Response from background.js."});
+}
+
+// Applies the desired filter's code to the CSS variable
+function setCSScode(buttonID) {
+  switch(buttonID) {
+    case "Invert":    CSS = INVERT;    break;
+    case "Grayscale": CSS = GRAYSCALE; break;
+    case "Sepia":     CSS = SEPIA;     break;
+    case "Night":     CSS = NIGHT;     break;
+    case "RotateCW":  CSS = ROTATECW;  break;
+    case "RotateCCW": CSS = ROTATECCW; break;
+    case "BlueLight": CSS = NOBLUE;    break; 
+    default: break; // Do nothing for default
+  }
+  console.log("CSS code set to: " + buttonID + "'s code.");
+}
+
+/*
+ Compares the current filter to the selected filter
+ If they are the same, remove the filter on all tabs
+ Else, apply the filter on all tabs
+*/
+function checkToggle(buttonID) {
+  if(previousID == buttonID) {
+    console.log("Removing filter: " + buttonID);
+    removeFilter(buttonID);
+    previousID = "";
+  }
+  else {
+    console.log("Applying filter: " + buttonID);
+    applyFilter(buttonID);
+    previousID = buttonID;
+  }
+}
+
+// Apply the selected filter to all tabs
+function applyFilter(buttonID) {
+  removeFilter(buttonID); // To apply a new filter, we must first remove the old filter.
+  var gettingAllTabs = browser.tabs.query({});
+  gettingAllTabs.then((tabs) => {
+    for (let currentTab of tabs) {
+      var tabID = currentTab.id;
+      console.log("Applied " + buttonID + " filter on tab #" + tabID);
+      browser.tabs.insertCSS(tabID, {code: CSS});
+    }
+  });
+}
+
+// Remove the selected filter from all tabs
+function removeFilter(buttonID) {
+  var gettingAllTabs = browser.tabs.query({});
+  gettingAllTabs.then((tabs) => {
+    for (let currentTab of tabs) { 
+      var tabID = currentTab.id;
+      
+      console.log("Removed " + buttonID + " filter on tab #" + tabID);
+      browser.tabs.removeCSS(tabID, {code: CSS});
+    }
+  });
+}
