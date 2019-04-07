@@ -11,10 +11,6 @@ h1 {
   padding: 2px;
 }
 
-label {
-  vertical-align: 
-}
-
 .toggle {
   background: #8C8C8C;
   background-image: -webkit-linear-gradient(top, #8C8C8C, #454545);
