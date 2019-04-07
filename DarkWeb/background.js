@@ -79,10 +79,6 @@ function toggleCSS(tab, buttonID) {
     }
     console.log("At end of function, prevID: " + previousID + " buttonID: " + buttonID);
   }
-
-  //var gettingTitle = browser.browserAction.getTitle({tabId: tab.id});
-  //gettingTitle.then(gotTitle);
-  //gettingTitle.then(applyFilter);
   applyFilter();
 }
 
@@ -90,15 +86,6 @@ function toggleCSS(tab, buttonID) {
 toggleCSS when popup sends a message.
 */
 function update(received, sender, sendResponse) {
-  /*
-  var gettingAllTabs = browser.tabs.query({});
-  gettingAllTabs.then((tabs) => {
-  for (tab in tabs) {
-    initializebrowserAction(tab);
-    toggleCSS(tab, received.message);
-  }
-});
-*/
   var tab = browser.tabs.getCurrent();
   toggleCSS(tab, received.message);
   console.log("MESSAGE THAT WAS RECEIVED: " + received.message);
