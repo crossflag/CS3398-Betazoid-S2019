@@ -10,14 +10,16 @@ const INVERT = "body {filter: invert(100%); background-color: white; color: blac
 const GRAYSCALE = "body {filter: grayscale(100%); background-color: white; color: black;}";
 const SEPIA = "body {filter: sepia(100%); background-color: white; color: black;}";
 const NIGHT =
-"body{filter: invert(100%); background-color: #E8EAE3; color: #181928;} "+
-"html,header {background-color: #17151c;} "+
-"a:link{color:#873E5A;}"+
-"a, a:hover, a:visited, a:active {background-color:#E8EAE3;color: #897800;}"+
-"div, :not(img, video){background-color:#E8EAE3; color:#181928;} "+
-"img, .svg {filter:invert(100%);} "+
-".app-badges, .mw-body{background: #E8EAE3;}"+
-"*{color: 181928;}";
+"body { filter:invert(100%); background-color: white; color: black; }"+
+"html {background-color: black;}"+
+"header,.footer .footer-sidebar { background-color: white;}"+
+"a,.tocnumber, .toctext { filter:invert(95%); }"+
+"a:link, #res a, #rhs a, #rhs { color: rgb(88,214,202); }"+
+"a:hover, a:active { background-color: black; color: rgb(147,127,198); }"+
+"cite { color: rgb(155,109,109); }"+
+"a:visited { color: rgb(147,127,198); }"+
+"* { opacity: 0.99; }"+
+"span { color: black; }";
 const ROTATECW = "body {filter: hue-rotate(180deg); background-color: white; color: black;}";
 const ROTATECCW = "body {filter: hue-rotate(270deg); background-color: white; color: black;}";
 const NOBLUE = "body {filter: sepia(40%); background-color: white; color: black;}";
