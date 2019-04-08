@@ -33,11 +33,17 @@ The popup window's event listener broadcasts a message, and this receives it
 Upon receiving a message, it then runs update()
 */
 browser.runtime.onMessage.addListener(updateFilter);
-
 function updateFilter(recieved, sender, sendResponse) {
   setCSScode(recieved.message);
   checkToggle(recieved.message);
   sendResponse({response: "Response from background.js."});
+}
+
+// This listener is for newly-created tabs
+browser.tabs.onUpdated.addListener(updateNewTab); 
+function updateNewTab(recieved, sender, sendResponse) {
+  var tabID = browser.tabs.getCurrent().id;
+  browser.tabs.insertCSS(tabID, {code: CSS});
 }
 
 // Applies the desired filter's code to the CSS variable
@@ -52,7 +58,6 @@ function setCSScode(buttonID) {
     case "BlueLight": CSS = NOBLUE;    break; 
     default: break; // Do nothing for default
   }
-  console.log("CSS code set to: " + buttonID + "'s code.");
 }
 
 /*
@@ -62,38 +67,33 @@ function setCSScode(buttonID) {
 */
 function checkToggle(buttonID) {
   if(previousID == buttonID) {
-    console.log("Removing filter: " + buttonID);
     removeFilter(buttonID);
     previousID = "";
   }
   else {
-    console.log("Applying filter: " + buttonID);
     applyFilter(buttonID);
     previousID = buttonID;
   }
 }
 
 // Apply the selected filter to all tabs
-function applyFilter(buttonID) {
-  removeFilter(buttonID); // To apply a new filter, we must first remove the old filter.
+function applyFilter() {
+  removeFilter(); // To apply a new filter, we must first remove the old filter.
   var gettingAllTabs = browser.tabs.query({});
   gettingAllTabs.then((tabs) => {
     for (let currentTab of tabs) {
       var tabID = currentTab.id;
-      console.log("Applied " + buttonID + " filter on tab #" + tabID);
       browser.tabs.insertCSS(tabID, {code: CSS});
     }
   });
 }
 
 // Remove the selected filter from all tabs
-function removeFilter(buttonID) {
+function removeFilter() {
   var gettingAllTabs = browser.tabs.query({});
   gettingAllTabs.then((tabs) => {
     for (let currentTab of tabs) { 
       var tabID = currentTab.id;
-      
-      console.log("Removed " + buttonID + " filter on tab #" + tabID);
       browser.tabs.removeCSS(tabID, {code: CSS});
     }
   });
