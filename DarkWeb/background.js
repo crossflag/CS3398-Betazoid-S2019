@@ -26,6 +26,9 @@ const NIGHT =
 const ROTATECW = "body {filter: hue-rotate(180deg); background-color: white; color: black;}";
 const ROTATECCW = "body {filter: hue-rotate(270deg); background-color: white; color: black;}";
 const NOBLUE = "body {filter: sepia(40%); background-color: white; color: black;}";
+const DROPS = "body {filter: drop-shadow(5px 5px 5px black); background-color: white; color: black;}";
+const CONTRAST = "body {filter: contrast(200%); background-color: white; color: black;}";
+const TRANSP = "body {filter: opacity(50%); background-color: white;  color: black;}";
 
 /*
 Add an event listener
@@ -63,6 +66,9 @@ function setCSScode(buttonID) {
     case "RotateCW":  CSS = ROTATECW;  break;
     case "RotateCCW": CSS = ROTATECCW; break;
     case "BlueLight": CSS = NOBLUE;    break; 
+    case "Drops":     CSS = DROPS;     break; 
+    case "Contrast":  CSS = CONTRAST;  break;
+    case "Transp":    CSS = TRANSP;    break;
     default: break; // Do nothing for default
   }
 }
@@ -99,7 +105,7 @@ function applyFilter() {
 
 // Remove the all filters from all tabs
 function removeAllFilters() {
-  var cssCodes = [INVERT, GRAYSCALE, SEPIA, NIGHT, ROTATECW, ROTATECCW, NOBLUE];
+  var cssCodes = [INVERT, GRAYSCALE, SEPIA, NIGHT, ROTATECW, ROTATECCW, NOBLUE, DROPS, CONTRAST, TRANSP];
   var gettingAllTabs = browser.tabs.query({});
   gettingAllTabs.then((tabs) => {
     for (let currentTab of tabs) { 
