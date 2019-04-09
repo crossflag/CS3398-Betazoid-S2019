@@ -2,4 +2,4 @@
 # DarkWeb 
 
 ## Previous Version
-*Enabled filters to be applied to all tabs, with old user interface
+* Enabled filters to be applied to all tabs, with old user interface
