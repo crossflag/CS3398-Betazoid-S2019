@@ -32,6 +32,13 @@ Add an event listener
 The popup window's event listener broadcasts a message, and this receives it
 Upon receiving a message, it then runs updateFilter()
 */
+
+browser.commands.onCommand.addListener(function(command) {
+  if (command == "toggle-feature") {
+    toggleFilters("Invert");
+  }
+});
+
 browser.runtime.onMessage.addListener(updateFilter);
 function updateFilter(recieved, sender, sendResponse) {
   toggleFilters(recieved.message);
