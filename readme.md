@@ -36,5 +36,6 @@ Responsible for adding basic button functionality in [background.js](https://git
 Responsible for adding keyboard shortcut functionality in ([DarkWeb/manifest.json](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/manifest.json). The extension can be run with the command "CTRL+SHIFT+D". Also improved the Night theme code in the [background.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/background.js) file for improved webpage coverage. Also aided in resolving MVC communication issues in [popup/settings.html](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/settings.html) and [DarkWeb/popup/settings.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/settings.js).
 Next steps: Implement atomic behavior for sliders in popup (Only one slider should be active at a time). Create a separate js file for querying webpages and adjusting detected colors.
 
-
+### Rhett
+Responsible for implementing the Blur Low and Blur High filters in [background.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/background.js). Responsible for testing and bug identification in for Google Chrome Compatibility(Noted in [Rhett_Report.md](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/Rhett_Report.md).
 
