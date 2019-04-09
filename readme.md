@@ -14,6 +14,13 @@ Welcome to our project and thanks for dropping in. We are excited you’re here.
 ## Status
 Project runs and implements basic funtionality.
 
+# Instructions for Enabling Firefox Plugin
+* Open Firefox browser
+* type "about:debugging" in browser
+* select "Load Temporary Add-on" button
+* Select any file from DarkWeb folder
+* Select DarkWeb Icon in top right corner
+
 ## Team's feature/accomplishments for Sprint 1 and next steps
 ### Cameron
 Responsible for extension UI look and layout. Artifacts include [settings.html](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/settings.html) and [setting.css](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/settings.css). Both of these files can be found in [DarkWeb/popup](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/tree/master/DarkWeb/popup).
@@ -40,4 +47,4 @@ Next steps: Implement atomic behavior for sliders in popup (Only one slider shou
 Responsible for implementing the Hi Contrast filter,Drop Shadow filter, and Transparency filter in [background.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/background.js). Responsible for testing and bug identification in for Google Chrome Compatibility(Noted in [Rhett_Report.md](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/artifacts/Rhett_Report.md). Modified the app [icons](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/tree/master/DarkWeb/icons) to work with Chrome. Slight UI changes to accomadate more filter buttons in [setting.css](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/settings.css).
 
 ### Nicholas
-Added the ability to apply to filters to all previously opened tabs, using the old interface [artifacts/DarkWeb_tabs/background.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/artifacts/DarkWeb_tabs/background.js). Corrected the popup toggle switches to so that a selection of a filter would programmatically deselect any previous selected toggle switches so the popup would not show more then one selected at a time [popup/settings.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/settings.js). 
+Added the ability to apply to filters to all previously opened tabs, using the old interface [artifacts/DarkWeb_tabs/background.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/artifacts/DarkWeb_tabs/background.js). Corrected the popup toggle switches to so that a selection of a filter would programmatically deselect any previous selected toggle switches so the popup would not show more then one selected at a time [popup/settings.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/settings.js). Next steps: Investigate how to inject JQuery into the extension. Have the extension automatically load and not go through "about:debugging" everytime.
