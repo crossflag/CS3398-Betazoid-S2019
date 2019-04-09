@@ -11,21 +11,15 @@
 
   "browser_action": {
 
-    "default_icon": "icons/sun.png",
+    "default_icon": "icons/sun.svg",
     "browser_style": true,
     "default_popup":"popup/settings.html"
   },
+
   "permissions": [
-    "<all_urls>",
+    "activeTab",
     "tabs",
-    "activeTab"
-  ],
-  "commands": {
-        "toggle-feature": {
-            "suggested_key": {
-                "default": "Ctrl+Space",
-                "mac": "Alt+Space"
-            }
-        }
-    }
+    "<all_urls>"
+  ]
+
 }

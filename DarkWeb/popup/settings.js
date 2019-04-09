@@ -1,14 +1,10 @@
 
-/*
-send message to background.js when a "click" event happens
-*/
 
 
 //print response to ensure message was handled correctly
 function handleResponse(message) {
   console.log(`Message from the background script:  ${message.response}`);
 }
-
 
 //print errors if any
 function handleError(error) {
@@ -22,7 +18,17 @@ For this web extension, background.js contains the only other event listener
 function notifyExtension(e) {
   //console.log("Settings.js listener: button was pressed.");
   var buttonID = e.target.id; // Get the pressed button's id
-  
+  //console.log(buttonID);
+  var switches = document.getElementsByClassName('switch');
+  for (var i = 0; i < switches.length; i++) {
+    //console.log(switches[i].control.checked);
+    // switches[i].click();
+    if (switches[i].lastElementChild.id != buttonID && switches[i].control.checked) {
+      switches[i].click();
+    }
+  }
+
+
   if(buttonID != "") {
   	console.log("BUTTON THAT WAS PRESSED: " + buttonID);
   	var sending = browser.runtime.sendMessage({message:buttonID});
@@ -31,7 +37,9 @@ function notifyExtension(e) {
   }
 }
 
-/* 
+
+
+/*
 Create event listener for any click in the popup
 All clicks cause the event listener to run notifyExtension()
 */
