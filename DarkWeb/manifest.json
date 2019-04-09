@@ -22,7 +22,8 @@
   "commands": {
         "toggle-feature": {
             "suggested_key": {
-                "default": "Ctrl+Space"
+                "default": "Ctrl+Space",
+                "mac": "Alt+Space"
             }
         }
     }
