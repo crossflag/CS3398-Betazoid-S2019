@@ -11,6 +11,10 @@ h1 {
   padding: 2px;
 }
 
+fieldset {
+  border: 1px solid;
+}
+
 .switch {
   position: relative;
   display: inline-block;
