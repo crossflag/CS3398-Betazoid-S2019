@@ -38,3 +38,6 @@ Next steps: Implement atomic behavior for sliders in popup (Only one slider shou
 
 ### Rhett
 Responsible for implementing the Blur filter in [background.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/background.js). Responsible for testing and bug identification in for Google Chrome Compatibility(Noted in [Rhett_Report.md](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/Rhett_Report.md). Modified the app [icons](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/tree/master/DarkWeb/icons) to work with Chrome.
+
+### Nicholas
+Added the ability to apply to filters to all previously opened tabs, using the old interface [artifacts/DarkWeb_tabs/background.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/artifacts/DarkWeb_tabs/manifest.json)
