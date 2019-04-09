@@ -16,13 +16,11 @@ Send a message to (all?) other event listeners
 For this web extension, background.js contains the only other event listener
 */
 function notifyExtension(e) {
-  //console.log("Settings.js listener: button was pressed.");
+  console.log("Settings.js listener: button was pressed.");
   var buttonID = e.target.id; // Get the pressed button's id
-  //console.log(buttonID);
   var switches = document.getElementsByClassName('switch');
+  
   for (var i = 0; i < switches.length; i++) {
-    //console.log(switches[i].control.checked);
-    // switches[i].click();
     if (switches[i].lastElementChild.id != buttonID && switches[i].control.checked) {
       switches[i].click();
     }
