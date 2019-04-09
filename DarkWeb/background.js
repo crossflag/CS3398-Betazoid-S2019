@@ -67,7 +67,8 @@ function setCSScode(buttonID) {
  Else, it will apply the new filter.
 */
 function toggleFilters(buttonID) {
-  removeAllFilters(); // To apply a new filter, we must first remove the old filter
+  removeAllFilters(); // To apply a new filter, we must first remove the all filters
+  CSS = ""; // Reset the CSS variable. This fixes tab persistence.
   if(previousID == buttonID) {
     previousID = "";
   }
@@ -89,10 +90,9 @@ function applyFilter() {
   });
 }
 
-// Remove the selected filter from all tabs
+// Remove the all filters from all tabs
 function removeAllFilters() {
   var cssCodes = [INVERT, GRAYSCALE, SEPIA, NIGHT, ROTATECW, ROTATECCW, NOBLUE];
-
   var gettingAllTabs = browser.tabs.query({});
   gettingAllTabs.then((tabs) => {
     for (let currentTab of tabs) { 
@@ -100,7 +100,6 @@ function removeAllFilters() {
       cssCodes.forEach(function(item) {
         var code = item; browser.tabs.removeCSS(tabID, {code: code});
       });
-      //browser.tabs.removeCSS(tabID, {code: CSS});
     }
   });
 }
