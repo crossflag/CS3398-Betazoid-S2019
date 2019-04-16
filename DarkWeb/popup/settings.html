@@ -11,13 +11,12 @@
   <h1>DarkWeb</h1>
   <div>
     <fieldset border="1px">
-      <legend align="center">Filters</legend>
+      <legend align="center">Color Filters</legend>
       <label class="switch" style="margin-bottom: 3px">
-
         <input type="checkbox">
-        <span class="slider round" id="Invert"></span>
+        <span class="slider round" id="BlueLight"></span>
       </label>
-      Invert Color
+      Blue Light
       <br>
 
       <label class="switch" style="margin-bottom: 3px">
@@ -29,9 +28,9 @@
 
       <label class="switch" style="margin-bottom: 3px">
         <input type="checkbox">
-        <span class="slider round" id="Sepia"></span>
+        <span class="slider round" id="Invert"></span>
       </label>
-      Sepia
+      Invert Color
       <br>
 
       <label class="switch" style="margin-bottom: 3px">
@@ -57,6 +56,18 @@
 
       <label class="switch" style="margin-bottom: 3px">
         <input type="checkbox">
+        <span class="slider round" id="Sepia"></span>
+      </label>
+      Sepia
+      <br>
+
+      <script src="settings.js"></script>
+    </fieldset>
+
+    <fieldset border="1px">
+      <legend align="center">Image Filters</legend>
+      <label class="switch" style="margin-bottom: 3px">
+        <input type="checkbox">
         <span class="slider round" id="Drops"></span>
       </label>
       Drop Shadow
@@ -74,14 +85,6 @@
         <span class="slider round" id="Transp"></span>
       </label>
       Transparency
-      <br>
-
-      <label class="switch" style="margin-bottom: 3px">
-        <input type="checkbox">
-        <span class="slider round" id="BlueLight"></span>
-      </label>
-      Blue Light
-      <script src="settings.js"></script>
       <br>
     </fieldset>
   </div>
