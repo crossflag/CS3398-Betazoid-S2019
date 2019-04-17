@@ -75,9 +75,9 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.styled {
-    margin: 10px;
-    border: 20px;
+.SaveSettings {
+    margin-top: 10px;
+    border: 10px;
     line-height: 2.5;
     padding: 0 20px;
     font-size: 1rem;
@@ -87,7 +87,23 @@ input:checked + .slider:before {
     background-color: rgb(36, 62, 65);
 }
 
-.styled:hover {
+ .ApplyPreset {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: 10px;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    background-color: rgb(36, 62, 65);
+}
+}
+
+.SaveSettings:hover, .ApplyPreset:hover {
     background-color: rgb(46, 54, 55);
 }
+
+
 
