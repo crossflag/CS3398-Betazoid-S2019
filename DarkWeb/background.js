@@ -30,6 +30,10 @@ const DROPS = "body {filter: drop-shadow(5px 5px 5px black); background-color: w
 const CONTRAST = "body {filter: contrast(200%); background-color: white; color: black;}";
 const TRANSP = "body {filter: opacity(50%); background-color: white;  color: black;}";
 
+console.log("DOES THIS WORK?!?!");
+console.log(localStorage.getItem('user'));
+toggleFilters(localStorage.getItem('user'));
+
 /*
 Add an event listener
 The popup window's event listener broadcasts a message, and this receives it
@@ -80,16 +84,23 @@ function setCSScode(buttonID) {
  Else, it will apply the new filter.
 */
 function toggleFilters(buttonID) {
-  removeAllFilters(); // To apply a new filter, we must first remove the all filters
-  CSS = ""; // Reset the CSS variable. This fixes tab persistence.
-  if(previousID == buttonID) {
-    previousID = "";
-  }
-  else {
-    setCSScode(buttonID);
-    previousID = buttonID;
-    applyFilter();
-  }
+    if(buttonID == "SaveSettings"){
+        console.log("Saving Settings");
+        var saveID = previousID;
+        localStorage.setItem('user', saveID);
+        console.log(localStorage.getItem('user'));
+        return;
+    }
+    removeAllFilters(); // To apply a new filter, we must first remove the all filters
+    CSS = ""; // Reset the CSS variable. This fixes tab persistence.
+    if(previousID == buttonID) {
+        previousID = "";
+    }
+    else {
+        setCSScode(buttonID);
+        previousID = buttonID;
+        applyFilter();
+    }
 }
 
 // Apply the selected filter to all tabs
