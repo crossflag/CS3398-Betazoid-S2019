@@ -30,8 +30,10 @@ const DROPS = "body {filter: drop-shadow(5px 5px 5px black); background-color: w
 const CONTRAST = "body {filter: contrast(200%); background-color: white; color: black;}";
 const TRANSP = "body {filter: opacity(50%); background-color: white;  color: black;}";
 
-console.log("DOES THIS WORK?!?!");
-console.log(localStorage.getItem('user'));
+
+/*
+Load previously saved color setting
+*/
 toggleFilters(localStorage.getItem('user'));
 
 /*
