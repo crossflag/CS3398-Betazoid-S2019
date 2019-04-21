@@ -96,10 +96,12 @@ function toggleFilters(buttonID) {
     CSS = ""; // Reset the CSS variable. This fixes tab persistence.
     if(previousID == buttonID) {
         previousID = "";
+        localStorage.setItem('current', "");
     }
     else {
         setCSScode(buttonID);
         previousID = buttonID;
+        localStorage.setItem('current', previousID);
         applyFilter();
     }
 }
@@ -144,6 +146,7 @@ function saveSettings() {
 
 /*
   Loads the last saved setting, and applies it to the browser window.
+  If the filter id is null or empty, then the extension will remove all filters.
   Currently applies single filters. Must be redesigned for more complex settings in the future.
 */
 function loadSettings() {
@@ -154,8 +157,13 @@ function loadSettings() {
     removeAllFilters();
     setCSScode(localStorage.getItem('user')); 
     previousID = localStorage.getItem('user');
+    localStorage.setItem('current', previousID);
     applyFilter();
   }
-  else
+  else {
     console.log("No valid data is stored in local storage!");
+    removeAllFilters();
+    previousID = "";
+    localStorage.setItem('current', "");
+  }
 }
