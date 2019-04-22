@@ -9,6 +9,12 @@
     "scripts": ["background.js"]
   },
 
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "DarkWeb@example.com"
+    }
+  },
+
   "browser_action": {
 
     "default_icon": "icons/sun.png",
