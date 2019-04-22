@@ -9,7 +9,8 @@ var previousID = ""; // Will hold previous button id for filters
 const INVERT = 
 "body {filter: invert(100%); background-color: white; color: black;}"+ 
 "html {background-color: black;}"+ 
-"header {background-color: white;} ";
+"header {background-color: white;}"+ 
+"video {filter: invert(100%);}";
 const GRAYSCALE = "body {filter: grayscale(100%); background-color: white; color: black;}";
 const SEPIA = "body {filter: sepia(100%); background-color: white; color: black;}";
 const NIGHT =
@@ -22,7 +23,8 @@ const NIGHT =
 "cite { color: rgb(155,109,109); }"+
 "a:visited { color: rgb(147,127,198); }"+
 "* { opacity: 0.99; }"+
-"span { color: black; }";
+"span { color: black; }"+ 
+"video {filter: invert(100%); }";
 const ROTATECW = "body {filter: hue-rotate(180deg); background-color: white; color: black;}";
 const ROTATECCW = "body {filter: hue-rotate(270deg); background-color: white; color: black;}";
 const NOBLUE = "body {filter: sepia(40%); background-color: white; color: black;}";
