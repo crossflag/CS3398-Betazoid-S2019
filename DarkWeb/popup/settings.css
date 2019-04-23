@@ -99,9 +99,21 @@ input:checked + .slider:before {
     text-shadow: 1px 1px 1px #000;
     background-color: rgb(36, 62, 65);
 }
+
+.removeAllFilters {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border: 10px;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  background-color: rgb(36, 62, 65);
 }
 
-.SaveSettings:hover, .ApplyPreset:hover {
+.SaveSettings:hover, .ApplyPreset:hover, .Clear:hover {
     background-color: rgb(46, 54, 55);
 }
 

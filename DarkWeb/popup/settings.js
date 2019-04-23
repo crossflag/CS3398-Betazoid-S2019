@@ -36,6 +36,12 @@ function notifyExtension(e) {
       if(currentID == null) currentID == ""; // Prevents errors
       flipSwitches(currentID); // flip the toggle switches based on user-saved filter
     }
+    else if(buttonID == "Clear")
+    {
+      currentID = localStorage.getItem('user'); // Get last user-saved filter
+      if(currentID == null) currentID == ""; // Prevents errors
+      flipSwitches(currentID); // flip the toggle switches based on user-saved filter
+    }
     else
     {
       currentID = buttonID;
