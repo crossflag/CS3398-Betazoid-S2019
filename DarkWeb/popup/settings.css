@@ -76,6 +76,7 @@ input:checked + .slider:before {
 }
 
 .SaveSettings {
+  display: block;
     margin-top: 10px;
     border: 10px;
     line-height: 2.5;
@@ -85,10 +86,11 @@ input:checked + .slider:before {
     color: #fff;
     text-shadow: 1px 1px 1px #000;
     background-color: rgb(36, 62, 65);
-    justify-content: center;
+    
 }
 
  .ApplyPreset {
+  display: block;
     margin-top: 10px;
     margin-bottom: 5px;
     border: 10px;
@@ -99,10 +101,11 @@ input:checked + .slider:before {
     color: #fff;
     text-shadow: 1px 1px 1px #000;
     background-color: rgb(36, 62, 65); 
-    justify-content: center;
+    
 }
 
   .removeAllFilters {
+    display: block;
     margin-top: 10px;
     margin-bottom: 5px;
     border: 10px;
@@ -113,7 +116,7 @@ input:checked + .slider:before {
     color: #fff;
     text-shadow: 1px 1px 1px #000;
     background-color: rgb(36, 62, 65);
-    justify-content: center;
+    
   }
 
 .SaveSettings:hover, .ApplyPreset:hover, .Clear:hover {
