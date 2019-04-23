@@ -20,7 +20,7 @@ Project runs and implements basic funtionality.
 * select "Add-ons"
 * Select select "Tools for Add-ons" drop down menu
 * Select select "Install Add-ons From File"
-![alt test](DarkWeb/validated_darkweb.png?raw=true "Title)
+![alt test](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/artifacts/install_add_on.png)
 * Select [darkweb-1.0-fx.xpi](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/darkweb-1.0-fx.xpi)
 
 
