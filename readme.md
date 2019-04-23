@@ -14,7 +14,7 @@ Welcome to our project and thanks for dropping in. We are excited you’re here.
 ## Status
 Project runs and implements basic funtionality.
 
-# Instructions for Enabling Firefox Plugin
+# Instructions for Installing Firefox Plugin
 * Open Firefox browser
 * Select menu tab from top right hand corner
 * select "Add-ons"
