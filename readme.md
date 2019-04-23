@@ -16,10 +16,12 @@ Project runs and implements basic funtionality.
 
 # Instructions for Enabling Firefox Plugin
 * Open Firefox browser
-* type "about:debugging" in browser
-* select "Load Temporary Add-on" button
-* Select any file from DarkWeb folder
-* Select DarkWeb Icon in top right corner
+* Select menu tab from top right hand corner
+* select "Add-ons"
+* Select select "Tools for Add-ons" drop down menu
+* Select select "Install Add-ons From File"
+* Select [darkweb-1.0-fx.xpi](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/darkweb-1.0-fx.xpi)
+
 
 ## Team's feature/accomplishments for Sprint 1 and next steps
 ### Cameron
