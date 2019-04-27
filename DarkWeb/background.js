@@ -15,7 +15,7 @@ const GRAYSCALE = "body {filter: grayscale(100%); background-color: white; color
 const SEPIA = "body {filter: sepia(100%); background-color: white; color: black;}";
 const NIGHT =
 "body { filter:invert(100%); background-color: white; color: black; }"+
-"html {background-color: black;}"+
+"html { background-color: black;}"+
 "header,.footer .footer-sidebar { background-color: white;}"+
 "a,.tocnumber, .toctext { filter:invert(95%); }"+
 "a:link, #res a, #rhs a, #rhs { color: rgb(88,214,202); }"+
@@ -24,7 +24,11 @@ const NIGHT =
 "a:visited { color: rgb(147,127,198); }"+
 "* { opacity: 0.99; }"+
 "span { color: black; }"+ 
-"video {filter: invert(100%); }";
+"video {filter: invert(100%); }"+
+".BRcontainer, .BRtoolbar { background-color: white; background: white; }"+
+".BookReader button, input { filter:invert(1);}"; 
+
+
 const ROTATECW = "body {filter: hue-rotate(180deg); background-color: white; color: black;}";
 const ROTATECCW = "body {filter: hue-rotate(270deg); background-color: white; color: black;}";
 const NOBLUE = "body {filter: sepia(40%); background-color: white; color: black;}";
@@ -33,6 +37,8 @@ const CONTRAST = "body {filter: contrast(200%); background-color: white; color: 
 const TRANSP = "body {filter: opacity(50%); background-color: white;  color: black;}";
 
 loadSettings(); // Load previously saved color setting on startup
+
+//pdf testing and debugging stuff
 
 /*
   This handles the keyboard shortcut.
