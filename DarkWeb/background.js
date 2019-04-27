@@ -6,16 +6,16 @@ const APPLICABLE_PROTOCOLS = ["http:", "https:"];
 // Different settings for different buttons
 var CSS = ""; // Will hold code for various filters
 var previousID = ""; // Will hold previous button id for filters
-const INVERT = 
-"body {filter: invert(100%); background-color: white; color: black;}"+ 
-"html {background-color: black;}"+ 
-"header {background-color: white;}"+ 
+const INVERT =
+"body {filter: invert(100%); background-color: white; color: black;}"+
+"html {background-color: black;}"+
+"header {background-color: white;}"+
 "video {filter: invert(100%);}";
 const GRAYSCALE = "body {filter: grayscale(100%); background-color: white; color: black;}";
 const SEPIA = "body {filter: sepia(100%); background-color: white; color: black;}";
 const NIGHT =
 "body { filter:invert(100%); background-color: white; color: black; }"+
-"html {background-color: black;}"+
+"html { background-color: black;}"+
 "header,.footer .footer-sidebar { background-color: white;}"+
 "a,.tocnumber, .toctext { filter:invert(95%); }"+
 "a:link, #res a, #rhs a, #rhs { color: rgb(88,214,202); }"+
@@ -23,8 +23,12 @@ const NIGHT =
 "cite { color: rgb(155,109,109); }"+
 "a:visited { color: rgb(147,127,198); }"+
 "* { opacity: 0.99; }"+
-"span { color: black; }"+ 
-"video {filter: invert(100%); }";
+"span { color: black; }"+
+"video {filter: invert(100%); }"+
+".BRcontainer, .BRtoolbar { background-color: white; background: white; }"+
+".BookReader button, input { filter:invert(1);}";
+
+
 const ROTATECW = "body {filter: hue-rotate(180deg); background-color: white; color: black;}";
 const ROTATECCW = "body {filter: hue-rotate(270deg); background-color: white; color: black;}";
 const NOBLUE = "body {filter: sepia(40%); background-color: white; color: black;}";
@@ -34,9 +38,11 @@ const TRANSP = "body {filter: opacity(50%); background-color: white;  color: bla
 
 loadSettings(); // Load previously saved color setting on startup
 
+//pdf testing and debugging stuff
+
 /*
   This handles the keyboard shortcut.
-  The actual keys for the shorcut are defined in manifest.json 
+  The actual keys for the shorcut are defined in manifest.json
     under "commands" > "toggle-feature" > "suggested" > default/mac
 */
 browser.commands.onCommand.addListener(function(command) {
@@ -60,11 +66,11 @@ function updateFilter(recieved, sender, sendResponse) {
   sendResponse({response: "--- background.js has finished! ---"});
 }
 
-/* 
+/*
   This listener is for newly-created tabs.
   After the user switches to the new tab, the code then runs updateNewTab().
 */
-browser.tabs.onUpdated.addListener(updateNewTab); 
+browser.tabs.onUpdated.addListener(updateNewTab);
 function updateNewTab(recieved, sender, sendResponse) {
   var tabID = browser.tabs.getCurrent().id;
   browser.tabs.insertCSS(tabID, {code: CSS});
@@ -79,8 +85,8 @@ function setCSScode(buttonID) {
     case "Night":     CSS = NIGHT;     break;
     case "RotateCW":  CSS = ROTATECW;  break;
     case "RotateCCW": CSS = ROTATECCW; break;
-    case "BlueLight": CSS = NOBLUE;    break; 
-    case "Drops":     CSS = DROPS;     break; 
+    case "BlueLight": CSS = NOBLUE;    break;
+    case "Drops":     CSS = DROPS;     break;
     case "Contrast":  CSS = CONTRAST;  break;
     case "Transp":    CSS = TRANSP;    break;
     default: console.log("No filter found for this button."); break; // Do nothing for default
@@ -132,12 +138,12 @@ function removeAllFilters() {
         cssCodes.forEach(function(code) {
           browser.tabs.removeCSS(tabID, {code: code});
         });
-      } 
+      }
     }
   });
 }
 
-/* 
+/*
   Saves the current filter to the browser's local storage.
   Currently saves single filters. Must be redesigned for more complex settings in the future.
 */
@@ -157,7 +163,7 @@ function loadSettings() {
 
     // Change this section later for more complex filters
     removeAllFilters();
-    setCSScode(localStorage.getItem('user')); 
+    setCSScode(localStorage.getItem('user'));
     previousID = localStorage.getItem('user');
     localStorage.setItem('current', previousID);
     applyFilter();
