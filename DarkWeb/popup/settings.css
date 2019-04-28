@@ -105,6 +105,8 @@ input:checked + .slider:before {
   display: inline-block;
   margin-top: 10px;
   border: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
   line-height: 2.5;
   color: #fff;
   text-shadow: 1px 1px 1px #000;
