@@ -114,6 +114,6 @@ input:checked + .slider:before {
   justify-content: center;
  }
 
-.SaveSettings:hover, .ApplyPreset:hover, .Clear:hover {
+.SaveSettings:hover, .ApplyPreset:hover, .removeAllFilters:hover {
     background-color: rgb(46, 54, 55);
 }
