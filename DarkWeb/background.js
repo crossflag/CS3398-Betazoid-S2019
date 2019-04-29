@@ -17,17 +17,14 @@ const SEPIA = "body {filter: sepia(100%); background-color: white; color: black;
 const NIGHT =
 "body { filter:invert(100%); background-color: white; color: black; }"+
 "html { background-color: black;}"+
-"header,.footer .footer-sidebar { background-color: white;}"+
-"a,.tocnumber, .toctext { filter:invert(95%); }"+
-"a:link, #res a, #rhs a, #rhs { color: rgb(88,214,202); }"+
-"a:hover, a:active { background-color: black; color: rgb(147,127,198); }"+
-"cite { color: rgb(155,109,109); }"+
-"a:visited { color: rgb(147,127,198); }"+
-"* { opacity: 0.99; }"+
-"span { color: black; }"+
+".thumbstrip {filter: invert(100%);}"+
+"iframe {filter: invert(100%);}"+
 "video {filter: invert(100%); }"+
-".BRcontainer, .BRtoolbar { background-color: white; background: white; }"+
-".BookReader button, input { filter:invert(1);}";
+"a:visited { color: rgb(147,127,198); }"+
+"cite { color: rgb(155,109,109); }"+
+"a:link, #res a, #rhs a, #rhs { color: rgb(180,71,64); }"+
+"header,.footer .footer-sidebar { background-color: white;}"+
+"img {filter: invert(100%); }";
 
 
 const ROTATECW = "body {filter: hue-rotate(180deg); background-color: white; color: black;}";
