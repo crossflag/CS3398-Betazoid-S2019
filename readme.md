@@ -78,6 +78,7 @@ Responsible for adding color changing to the slider when the mouse is hovered on
 Worked on Night filter to not invert images and other media on most sites (e.g. https://www.nytimes.com/) , while keeping the prior functionality of working with video and links [background.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/background.js). Submitted DarkWeb through the mozilla verification and signing tool to allow for internal distribution and installation of DarkWeb as a permanent add-on [Darkweb.xpi](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/Darkweb.xpi) [ValidationImage](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/artifacts/validated_darkweb.png)  
 
 ### Cameron
+Responsible for Night Mode to not invert videos. This change can be found in [background.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/background.js). This functionality should work on all major video streaming sites such as Youtube, Vimeo and LiveLeak. I also helped with organizing filter layout, specifically putting filters in alphabetical order. These changes can be found in [settings.html](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/settings.html). Moving forward I would like to work more on button functionality and improving the performance of the filters, espcially the "Blue Light" and "Night" filters.
 
 
 ### Richard
