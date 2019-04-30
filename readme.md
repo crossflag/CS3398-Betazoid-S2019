@@ -15,6 +15,10 @@ Welcome to our project and thanks for dropping in. We are excited you’re here.
 Project runs and implements basic funtionality.
 
 # Instructions for Installing Firefox Plugin
+## Via Mozilla Addon Link
+* https://addons.mozilla.org/en-US/firefox/addon/darkweb/
+
+## Via xpi File
 * Open Firefox browser
 * Select menu tab from top right hand corner
 * select "Add-ons"
