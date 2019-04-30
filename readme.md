@@ -72,7 +72,7 @@ Responsible for making filters persist over multiple tabs, and having a filter-c
 
 
 ### Nicholas
-Worked on Night filter to not invert images and other media on most sites, while keeping the prior functionality of working with video and links [background.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/background.js). 
+Worked on Night filter to not invert images and other media on most sites (e.g. https://www.nytimes.com/) , while keeping the prior functionality of working with video and links [background.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/background.js). Submitted DarkWeb through the mozilla verification tool to allow for internal distribution and installation of DarkWeb as a permanent add-on.  
 
 
 ### Cameron
