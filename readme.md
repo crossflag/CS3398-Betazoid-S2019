@@ -15,7 +15,8 @@ Welcome to our project and thanks for dropping in. We are excited you’re here.
 Project runs and implements basic funtionality.
 
 # Instructions for Installing Firefox Plugin
-## Via Mozilla Addon Link
+## Via Mozilla Addon Link![alt test](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/artifacts/firefox_add-on.png)
+
 * https://addons.mozilla.org/en-US/firefox/addon/darkweb/
 
 ## Via xpi File
