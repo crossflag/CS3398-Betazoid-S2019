@@ -30,7 +30,7 @@ Project runs and implements basic funtionality.
 
 ![alt test](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/artifacts/install_add_on.png)
 
-* Select [darkweb-1.0-fx.xpi](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/darkweb-1.0-fx.xpi)
+* Select [darkweb-1.0-fx.xpi](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/Darkweb.xpi)
 
 
 ## Team's feature/accomplishments for Sprint 1 and next steps
