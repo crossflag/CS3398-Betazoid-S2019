@@ -59,3 +59,19 @@ Changed UI look, layout and feel. These changes can be seen in [settings.html](h
 
 ### Richard
 Responsible for making filters persist over multiple tabs, and having a filter-change on one tab be reflected on all others. This functionality was added in [background.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/background.js). The script also gained permission to apply these filter changes over all urls, as reflected in the permissions section of [DarkWeb/manifest.json](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/manifest.json). Next Steps: Investigate how to save current filter settings upon closing the extension, and loading those settings upon reopening the extension/web browser.
+
+## Team's feature/accomplishments for Sprint 3
+### Tyler
+
+
+### Rhett
+
+
+### Nicholas
+
+
+### Cameron
+
+
+### Richard
+
