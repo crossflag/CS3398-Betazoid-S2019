@@ -72,7 +72,7 @@ Responsible for making filters persist over multiple tabs, and having a filter-c
 
 
 ### Rhett
-
+Responsible for reorganizing the UI into its current more horizontal state which can be seen in [settings.html](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/settings.html) and [settings.css](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/settings.css). Also added a clear functionality that gives the user an extra way to erase the currently set filter seen in [settings.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/settings.js). I also updated the xpi file for the extension, submitted the extension to AMO (Mozilla's addon store), and maintained updates for the files on the [store page](https://addons.mozilla.org/en-US/firefox/addon/darkweb/) as we added features.
 
 ### Nicholas
 Worked on Night filter to not invert images and other media on most sites (e.g. https://www.nytimes.com/) , while keeping the prior functionality of working with video and links [background.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/background.js). Submitted DarkWeb through the mozilla verification and signing tool to allow for internal distribution and installation of DarkWeb as a permanent add-on [Darkweb.xpi](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/Darkweb.xpi) [ValidationImage](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/artifacts/validated_darkweb.png)  
