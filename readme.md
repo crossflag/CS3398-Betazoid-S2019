@@ -82,4 +82,4 @@ Responsible for Night Mode to not invert videos. This change can be found in [ba
 
 
 ### Richard
-Responsible for adding functionality to the "Save Settings" and "Apply Preset" buttons, which can be seen in (https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/background.js) and (https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/settings.html).
+Responsible for adding functionality to the "Save Settings" and "Apply Preset" buttons, which can be seen in [background.js] and [settings.html].
