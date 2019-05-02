@@ -69,6 +69,7 @@ Responsible for making filters persist over multiple tabs, and having a filter-c
 
 ## Team's feature/accomplishments for Sprint 3
 ### Tyler
+Adjusted Night mode preset for better coverage when applied to simple webpages. Additionally, extended Night mode to function properly on several popular e-book viewers [background.js](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/background.js). Added "Apply Preset" and "Save Settings" buttons and implemented their backend functionality in [DarkWeb/popup/](https://github.com/cs3398-betazoid-betamales/CS3398-Betazoid-S2019/blob/master/DarkWeb/popup/). Was unable to implement a way to apply filters to PDFs because Firefox restricts that behavior (https://github.com/mozilla/pdf.js/issues/2071).
 
 
 ### Rhett
